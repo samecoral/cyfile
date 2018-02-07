@@ -14,7 +14,7 @@
 <!-- 别名  -->
 <typeAliases>
 <!-- <typeAlias type="com.pb.mybatis.po.User" alias="User"/> -->
-<package name="com.cao.pojo"/>
+<package name="com.cao.user.pojo"/>
 </typeAliases>
 <!--配置  -->
 </configuration>

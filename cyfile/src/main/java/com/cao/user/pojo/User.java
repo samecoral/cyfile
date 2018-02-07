@@ -1,4 +1,4 @@
-package com.cao.pojo;
+package com.cao.user.pojo;
 
 import java.io.Serializable;
 import java.util.Date;

@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.cao.dao.IUserDao;
-import com.cao.pojo.User;
+import com.cao.user.dao.IUserDao;
+import com.cao.user.pojo.User;
 /**
  * 
  * @author caoheshan
@@ -39,4 +39,13 @@ public class UserTest {
 		u.setUserSalt("b0abe376c5429e0c07c65d6ea16a4143");
 		userDao.addUser(u);
 	}
+
+	public IUserDao getUserDao() {
+		return userDao;
+	}
+
+	public void setUserDao(IUserDao userDao) {
+		this.userDao = userDao;
+	}
+	
 }

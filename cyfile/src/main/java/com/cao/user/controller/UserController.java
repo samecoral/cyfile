@@ -1,4 +1,4 @@
-package com.cao.controller;
+package com.cao.user.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

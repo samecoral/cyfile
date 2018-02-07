@@ -1,10 +1,10 @@
-package com.cao.service;
+package com.cao.user.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cao.dao.IUserDao;
-import com.cao.pojo.User;
+import com.cao.user.dao.IUserDao;
+import com.cao.user.pojo.User;
 /**
  * 
  * @author caoheshan

@@ -1,6 +1,6 @@
-package com.cao.service;
+package com.cao.user.service;
 
-import com.cao.pojo.User;
+import com.cao.user.pojo.User;
 /**
  * 
  * @author caoheshan

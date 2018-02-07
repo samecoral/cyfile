@@ -1,11 +1,16 @@
-package com.cao.dao;
+package com.cao.user.dao;
 
-import com.cao.pojo.User;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Component;
+
+import com.cao.user.pojo.User;
 /**
  * 
  * @author caoheshan
  *
  */
+@Component
+@Lazy
 public interface IUserDao {
 
 	/**通过id查询用户

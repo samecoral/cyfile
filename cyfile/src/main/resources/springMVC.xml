@@ -24,7 +24,7 @@
 	<!-- 注：如果base-package=cn.zml 则注解事务不起作用 TODO 读源码 -->
 	<!-- 因为此处只应该加载表现层组件，如果此处还加载dao层或service层的bean会将之前容器加载的替换掉 -->
 	<!-- 而且此处不会进行AOP织入，所以会造成AOP失效问题（如事务不起作用） -->
-	<context:component-scan base-package="com.mtm"
+	<context:component-scan base-package="com.cao"
 		use-default-filters="false">
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
