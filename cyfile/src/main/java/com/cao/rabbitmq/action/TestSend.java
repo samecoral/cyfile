@@ -20,4 +20,11 @@ public class TestSend {
 		new Send().sendRouting("hello2");
 		new Send().sendRouting("hello3");
 	}
+	
+	@Test
+	public void testSendTopic(){
+		new Send().sendTopic("cao.he.shan");
+		new Send().sendTopic("cao.he.hh");
+		new Send().sendTopic("yy.com.cc");
+	}
 }

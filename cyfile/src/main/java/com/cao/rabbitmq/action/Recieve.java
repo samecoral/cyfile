@@ -7,6 +7,7 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConsumerCancelledException;
 import com.rabbitmq.client.QueueingConsumer;
+import com.rabbitmq.client.QueueingConsumer.Delivery;
 import com.rabbitmq.client.ShutdownSignalException;
 
 public class Recieve {
@@ -146,6 +147,53 @@ public class Recieve {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	/**
+	 * 功能  topic接收消息
+	 *@date 2018年2月9日下午5:30:10
+	 *@author caoheshan
+	 *@param 
+	 *@returnType void
+	 *@return
+	 */
+	public void reciveTopic(String routingKey){
+		final String EXCHANGE_NAME = "test_topic";
+		try {
+			Connection connection = RabbitMqUtil.getConnection();
+			Channel channel = connection.createChannel();
+			
+			channel.exchangeDeclare(EXCHANGE_NAME, "topic");
+			String queueName = channel.queueDeclare().getQueue();
+			//将通道绑定到  routingKey 上面
+			channel.queueBind(queueName, EXCHANGE_NAME, routingKey);
+			//消费者
+			QueueingConsumer consumer = new QueueingConsumer(channel);
+			channel.basicConsume(queueName, true, consumer);
+			
+			while(true){
+				Delivery delivery = consumer.nextDelivery();
+				String message =  new String (delivery.getBody());
+				String routingKey2 = delivery.getEnvelope().getRoutingKey(); 
+				System.out.println(message+"   绑定的路由key ："+routingKey2);
+			}
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	/**
+	 * 功能 
+	 *@date 2018年2月12日下午4:44:19
+	 *@author caoheshan
+	 *@param 
+	 *@returnType void
+	 *@return
+	 */
+	public void recieveRpc(){
 		
 	}
 }

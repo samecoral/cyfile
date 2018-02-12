@@ -65,4 +65,31 @@ public class TestRecive {
 		
 		new Recieve().recieveRoutingDirect("hello2");
 	}
+
+	/**
+	 * 功能 测试  接收来自topic  的消息
+	 *@date 2018年2月11日下午4:33:24
+	 *@author caoheshan
+	 *@param 
+	 *@returnType void
+	 *@return
+	 */
+	@Test
+	public void testReciveTopic(){
+		
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				new Recieve().reciveTopic("cao.he.*");
+			}
+		}).start();
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				new Recieve().reciveTopic("cao.#");
+			}
+		}).start();
+		
+		new Recieve().reciveTopic("yy.com.cc");
+	}
 }
