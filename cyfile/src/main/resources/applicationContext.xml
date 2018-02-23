@@ -17,14 +17,14 @@
     <!-- 在applicationContext.xml中只加载除表现层之外的所有bean，因此下面一行中不需要加载@Controller -->                       
     <!-- 扫描注解Bean 不包括@Controller(表现层) 保证@Service @Repository的属性被注入-->
     <aop:aspectj-autoproxy />
-    <context:component-scan base-package="com.mtm">
+    <context:component-scan base-package="com.cao">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
          <context:exclude-filter type="annotation"  expression="org.springframework.web.bind.annotation.ControllerAdvice"/> 
     </context:component-scan>
     
     
      <!-- 引入配置文件 --> 
-	<context:property-placeholder ignore-unresolvable="true" local-override="true" location="classpath:jdbc.properties"/>
+	<context:property-placeholder ignore-unresolvable="true" local-override="true" location="classpath:jdbc.properties,classpath:mq.properties"/>
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
 			<property name="driverClassName" value="${jdbc.driver}" />
 	        <property name="url" value="${jdbc.url}" />
@@ -96,7 +96,7 @@
   
     <!-- DAO接口所在包名，Spring会自动查找其下的类 -->  
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">  
-        <property name="basePackage" value="com.cao.dao" />  
+        <property name="basePackage" value="com.cao" />  
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>  
     </bean>  
   
@@ -134,5 +134,6 @@
 			</props>
 		</property>
 	</bean>
-
+	
+<import resource="applicationContext-rabbitmq-sync.xml"/> 
 </beans>
