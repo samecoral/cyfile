@@ -127,15 +127,12 @@
 			<artifactId>spring-jms</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-<<<<<<< HEAD
-
-=======
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aspects</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
->>>>>>> parent of ef8244e... 全部添加
+
 		<!-- json库 -->
 
 		<!-- 模板库 -->
@@ -247,18 +244,14 @@
 			<artifactId>jedis</artifactId>
 			<version>2.9.0</version>
 		</dependency>
-<<<<<<< HEAD
-		<!-- rabbitmq   -->
-=======
+
 		<!-- rabbitmq -->
->>>>>>> parent of ef8244e... 全部添加
+
 		<dependency>
 			<groupId>com.rabbitmq</groupId>
 			<artifactId>amqp-client</artifactId>
 			<version>3.4.1</version>
 		</dependency>
-<<<<<<< HEAD
-=======
 		<dependency>
 			<groupId>org.springframework.amqp</groupId>
 			<artifactId>spring-rabbit</artifactId>
@@ -271,9 +264,6 @@
 			<classifier>sources</classifier>
 			<scope>compile</scope>
 		</dependency>
->>>>>>> parent of ef8244e... 全部添加
-
-
 
 		<!-- cglib与asm -->
 		<dependency>
