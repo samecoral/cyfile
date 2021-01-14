@@ -37,7 +37,7 @@
 		<freemarker.version>2.3.23</freemarker.version>
 		<velocity.version>1.7</velocity.version>
 		<tapestry.version>5.3.7</tapestry.version>
-		<poi.version>3.16</poi.version>
+		<poi.version>4.1.2</poi.version>
 		<asm.version>4.2</asm.version>
 		<cglib.version>3.2.5</cglib.version>
 
